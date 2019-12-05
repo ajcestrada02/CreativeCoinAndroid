@@ -59,6 +59,7 @@ public class PinActivty extends AppCompatActivity {
                 break;
             case R.id.pinClear:
                 pinClear();
+                Toast.makeText(this, "Cleared", Toast.LENGTH_SHORT).show();
                 break;
         }
         // Uncomment this for debugging purposes
@@ -68,6 +69,7 @@ public class PinActivty extends AppCompatActivity {
             if(isPinCorrect(this.enteredPinCode)){
                 Intent pinIntent = new Intent(PinActivty.this, MainActivity.class);
                 startActivity(pinIntent);
+                pinClear();
             }else{
                 Toast.makeText(this, "Incorrect pin code", Toast.LENGTH_SHORT).show();
                 pinClear();
